@@ -110,10 +110,41 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 223px;   
+    
 }
 
 .list::-webkit-scrollbar {  
     display: none;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-bottom: 5px solid #6ddfca;
+    border-top: 10px solid #7c91cf;
+    border-right: 6px solid #b9d554;
+    border-left: 9px solid #b494d5;
+    border-radius: 50%;
+    border-radius: 50%;
+    animation: loader 3s linear infinite;
+}
+  
+@keyframes loader {
+    0%
+    {
+      transform: rotate(0deg);
+    }
+    100%
+    {
+      transform: rotate(360deg);
+    }
+    
 }
 
 .list-item {

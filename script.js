@@ -53,7 +53,7 @@ function postRequest(list) {
     .then(data => {
         //console.log(data)
         cityJson = data
-
+        
         addList(data, list)
     })
 }
@@ -76,7 +76,7 @@ function addList(data, list, str) {
 //добавление названия города в список и создание обработчика клика по городу
 function addListElement(item, list, str = '') {
     
-    if (str == '' || item.name.toLowerCase().includes(str)) {
+    if (str == '' || item.name.toLowerCase().includes(str.toLowerCase())) {
 
         let listItem = document.createElement('p')
         listItem.classList.add('list-item')
