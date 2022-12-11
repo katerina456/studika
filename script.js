@@ -16,6 +16,11 @@ body.addEventListener('click', (event) => {
 
 let input = document.querySelector('.input-city')
 input.addEventListener('input', () => {  
+    if (input.value != '') {
+        document.querySelector('.button-input').style.visibility = 'visible'
+    } else {
+        document.querySelector('.button-input').style.visibility = 'hidden'
+    }
     addList(cityJson, list, input.value)
 })
 
@@ -27,6 +32,7 @@ btnInput.addEventListener('click', (event) => {
     console.log(parent)
     parent.querySelector('.input-city').value = ''
     addList(cityJson, list)
+    document.querySelector('.button-input').style.visibility = 'hidden'
 })
 
 
