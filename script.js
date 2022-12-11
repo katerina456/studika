@@ -20,6 +20,16 @@ input.addEventListener('input', () => {
 })
 
 
+let btnInput = document.querySelector('.img-button')
+
+btnInput.addEventListener('click', (event) => {
+    let parent = event.target.parentElement.parentElement
+    console.log(parent)
+    parent.querySelector('.input-city').value = ''
+    addList(cityJson, list)
+})
+
+
 const buttonArrow = document.querySelector('.city-arrow')
 //объект для хранения данных из запроса
 let cityJson
@@ -80,8 +90,26 @@ function addListElement(item, list, str = '') {
 
         let listItem = document.createElement('p')
         listItem.classList.add('list-item')
-        listItem.innerText = item.name
 
+        if (str == '') {
+            listItem.innerText = item.name
+        } else {
+            let numStart = item.name.toLowerCase().indexOf(str.toLowerCase())
+
+            let firstPart = document.createElement('span')
+            firstPart.textContent = item.name.slice(0, numStart)
+            listItem.append(firstPart)
+
+            let span = document.createElement('span')
+            span.classList.add('span')
+            span.textContent = item.name.slice(numStart, numStart + str.length)
+            listItem.append(span)
+
+            let secondPart = document.createElement('span')
+            secondPart.textContent = item.name.slice(numStart + str.length)
+            listItem.append(secondPart)
+        }
+        
         listItem.addEventListener('click', (event) => {
             let parent = document.querySelector('.user-city-box')
 
@@ -142,7 +170,7 @@ function removeUserCity(event) {
     }        
 }
 
-
+//кнопка сохранить
 const btnCity = document.querySelector('.btn-city')
 
 btnCity.addEventListener('click', () => {
@@ -155,6 +183,11 @@ btnCity.addEventListener('click', () => {
         }
         city.textContent += clickedCities[i]
     }
+
+    fetch('#', {
+        method: 'POST',
+        body: clickedCities
+    })
 
     block.classList.toggle('visible')
 })
