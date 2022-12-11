@@ -1,0 +1,26 @@
+@media screen and (max-width: 500px) {
+    .user-name {
+        display: none;
+    }
+
+    .avatar {
+        display: none;
+    }
+
+    .search {
+        padding: 0 8px 0;
+    }
+
+    .like {
+        margin-right: 0;
+    }
+
+    .logo-city {
+        margin: 0;
+    }
+
+    .city-list {
+        left: 5vw;
+    }
+
+}

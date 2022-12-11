@@ -1,0 +1,23 @@
+@media screen and (max-width: 845px) {
+    .nav {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .search {
+        margin-bottom: 0;
+    }
+
+    .city-list {
+        left: 20vw;
+    }
+    
+    .input {
+        width: auto;
+    }
+
+}

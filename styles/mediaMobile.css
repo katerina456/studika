@@ -1,0 +1,19 @@
+@media screen and (max-width: 400px) {
+    .nav, .input, .user-name, .avatar, .city-arrow, .city {
+        display: none;
+    }
+
+    .count {
+        margin: 0;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .logo {
+        margin: 0;
+    }
+    
+
+}
